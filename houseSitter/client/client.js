@@ -22,3 +22,11 @@ Template.selectHouse.events = {
     Session.set('selectedHouseId', evt.currentTarget.value);
   }
 };
+
+Template.showHouse.helpers({
+  house: function () {
+    return HousesCollection.findOne({
+      _id: Session.get("selectedHouseId")
+    });
+  }
+});
