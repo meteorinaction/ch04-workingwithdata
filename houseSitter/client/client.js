@@ -1,3 +1,9 @@
+Tracker.autorun(function () {
+  console.log("The selectedHouse ID is: " +
+    Session.get("selectedHouseId")
+  );
+});
+
 Template.selectHouse.helpers({
   housesNameId: function () {
     return HousesCollection.find({}, {});
