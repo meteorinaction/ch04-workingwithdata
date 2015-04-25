@@ -18,7 +18,20 @@
 
 
 <template name="showHouse">
+  {{#with house}}
+  <h2>Taking care of {{name}}'s house</h2>
+  {{#each plants }} {{> plantDetails }} {{/each}} {{else}} You need to select a house. {{/with}}
 </template>
+
+<template name="plantDetails">
+  <p>
+    <strong>Plant color:</strong> {{color}}</p>
+  <p>
+    <strong>Instructions:</strong> {{instructions}}
+    <button class="water" data-id="{{../_id}}-{{color}}" {{isWatered}}>Done</button>
+  </p>
+</template>
+
 
 <template name="houseForm">
 </template>
