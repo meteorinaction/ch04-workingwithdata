@@ -8,7 +8,14 @@
 </body>
 
 <template name="selectHouse">
+  <select id="selectHouse">
+    <option value="" {{isSelected}}></option>
+    {{#each housesNameId}}
+    <option value="{{_id}}" {{isSelected}}>{{name}}</option>
+    {{/each}}
+  </select>
 </template>
+
 
 <template name="showHouse">
 </template>
