@@ -6,7 +6,12 @@ Tracker.autorun(function () {
 
 Template.selectHouse.helpers({
   housesNameId: function () {
-    return HousesCollection.find({}, {});
+    return HousesCollection.find({}, {
+      fields: {
+        name: 1,
+        _id: 1
+      }
+    });
   },
   isSelected: function () {
     return Session.equals('selectedHouseId', this._id) ? 'selected' : '';
