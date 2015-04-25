@@ -30,3 +30,10 @@ Template.showHouse.helpers({
     });
   }
 });
+
+Template.plantDetails.events({
+  'click button.water': function (evt) {
+    var plantId = $(evt.currentTarget).attr('data-id');
+    Session.set(plantId, true);
+  }
+});
